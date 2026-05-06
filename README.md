@@ -141,9 +141,12 @@ Vite forwards those requests to:
 https://api.freeapi.app
 ```
 
+For Vercel production deployments, `vercel.json` adds the same `/api/*`
+rewrite so register, login, logout, and current-user requests are forwarded to
+FreeAPI after the app is deployed.
+
 ## More Work Needed
 
-- Deploy the project and add the live demo link.
 - Add the GitHub repository link after pushing the code.
 - Add form validation messages for stronger password and username rules.
 - Add route-based pages with React Router.
