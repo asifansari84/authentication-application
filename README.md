@@ -4,8 +4,8 @@ A clean authentication-based frontend built with React, Vite, CSS, and the FreeA
 
 ## Live Links
 
-- Demo: `Add your deployed demo link here`
-- Repository: `Add your GitHub repository link here`
+- Demo: `https://github.com/asifansari84/authentication-application`
+- Repository: `https://authentication-application-psi.vercel.app/`
 
 ## Use Case
 
