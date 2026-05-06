@@ -1,0 +1,343 @@
+.app-shell {
+  min-height: 100svh;
+  padding: 40px;
+}
+
+.auth-page {
+  min-height: calc(100svh - 80px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 460px);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.brand-panel,
+.auth-card,
+.dashboard-page {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.brand-panel {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-panel::after {
+  content: '';
+  position: absolute;
+  inset: auto -14% -24% 20%;
+  height: 320px;
+  background:
+    radial-gradient(circle at 22% 44%, rgba(21, 128, 61, 0.24), transparent 30%),
+    radial-gradient(circle at 78% 40%, rgba(37, 99, 235, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.08), rgba(13, 148, 136, 0.18));
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  transform: rotate(-5deg);
+  z-index: 0;
+}
+
+.brand-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  max-width: 760px;
+  color: var(--text-strong);
+  font-size: clamp(3rem, 8vw, 6.4rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+h2 {
+  color: var(--text-strong);
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.intro-copy {
+  max-width: 580px;
+  margin-top: 24px;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.auth-card {
+  align-self: center;
+  padding: 28px;
+}
+
+.auth-heading {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.message {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.message.success {
+  border: 1px solid rgba(22, 163, 74, 0.28);
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--success);
+}
+
+.message.error {
+  border: 1px solid rgba(220, 38, 38, 0.28);
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--danger);
+}
+
+.auth-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: var(--text-strong);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--field);
+  color: var(--text-strong);
+  font: inherit;
+  padding: 0 14px;
+}
+
+select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text) 50%),
+    linear-gradient(135deg, var(--text) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 21px,
+    calc(100% - 12px) 21px;
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+}
+
+.primary-action,
+.secondary-action,
+.danger-action {
+  width: 100%;
+  padding: 0 18px;
+}
+
+.primary-action {
+  margin-top: 6px;
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(17, 94, 89, 0.2);
+}
+
+.secondary-action {
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  color: var(--text-strong);
+}
+
+.danger-action {
+  background: var(--danger);
+  color: #ffffff;
+}
+
+.compact {
+  width: auto;
+  min-width: 132px;
+}
+
+.switch-copy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  color: var(--text);
+}
+
+.text-action {
+  min-height: auto;
+  padding: 0;
+  background: transparent;
+  color: var(--accent);
+}
+
+.dashboard-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.dashboard-nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-hero {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: 44px 0;
+}
+
+.profile-hero h1 {
+  font-size: clamp(2.7rem, 7vw, 5.2rem);
+}
+
+.avatar {
+  width: 112px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(20, 184, 166, 0.96), rgba(37, 99, 235, 0.9)),
+    var(--accent);
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.profile-item {
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  padding: 18px;
+}
+
+.profile-item span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-item strong {
+  color: var(--text-strong);
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.refresh-action {
+  max-width: 220px;
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 18px;
+  }
+
+  .auth-page {
+    min-height: calc(100svh - 36px);
+    grid-template-columns: 1fr;
+  }
+
+  .brand-panel {
+    min-height: 300px;
+    padding: 28px;
+  }
+
+  .auth-card,
+  .dashboard-page {
+    padding: 22px;
+  }
+
+  .dashboard-nav,
+  .profile-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-nav {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .compact,
+  .refresh-action {
+    width: 100%;
+    max-width: none;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
